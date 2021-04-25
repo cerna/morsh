@@ -97,3 +97,21 @@
 
 # If at some point, this gets too much fun, send kudos. 
 
+# Build via included Dockerfile
+
+## Run `docker build` command
+
+```
+docker build -t mkh-codelabs --build-arg DEBIAN_DISTRO_BASE=ubuntu:focal .
+```
+
+## Run `docker run` command
+
+```
+docker run -it --rm -u "$(id -u):$(id -g)" -p 8000:8000 --network host -w /home/machinekit/gcl_tools/site mkh-codelabs:latest gulp serve
+```
+
+## Test in browser
+
+Load address `localhost:8000` in web browser.
+
